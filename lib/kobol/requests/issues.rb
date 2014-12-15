@@ -22,6 +22,7 @@ module Kobol::Requests
       Kobol::Presenters::Issue.new(title: issue.title,
                                    labels: issue.labels,
                                    body: issue.body,
+                                   language: issue.language,
                                    comments: issue.comments,
                                    updated_at: issue.updated_at,
                                    url: issue._rels[:html].href)

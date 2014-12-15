@@ -1,7 +1,7 @@
 module Kobol::Presenters
   class Issue
 
-    attr_reader :title, :comments, :url
+    attr_reader :title, :comments, :url, :language
 
     def initialize(attributes)
       attributes.each { |property,value| instance_variable_set("@#{property}", value) }
@@ -9,6 +9,10 @@ module Kobol::Presenters
 
     def title
       @title ? CGI::escapeHTML(@title) : nil
+    end
+
+    def language
+      @language ? CGI::escapeHTML(@language) : nil
     end
 
     def body
